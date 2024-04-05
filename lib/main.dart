@@ -1,8 +1,16 @@
-import 'package:flutter/material.dart';
-import 'package:inclass_test/read.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:inclass_test/firebase_options.dart';
+import 'package:inclass_test/navbar.dart';
+
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  runApp(
+    MyApp()
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -11,7 +19,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ReadDetails(),
+      debugShowCheckedModeBanner: false,
+      home: Navbar(),
     );
   }
 }
