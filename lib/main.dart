@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:inclass_test/firebase_options.dart';
 import 'package:inclass_test/navbar.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
